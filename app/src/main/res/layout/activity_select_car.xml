@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.bottombar.activity.SelectCar">
+
+    <!--DrawerLayout的width和height要设置成具体数值，否择报错,如果要设置成match_parent，必须在内部的布局中
+    使用layout_gravity=""-->
+    <!--这里的width是drawerLayout的范围，作为透明组件放置，所以在这个范围内的监听器都会失效-->
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/dlShow"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#f2f2f2"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/toolbar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="选择车辆"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@android:color/background_dark"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+                app:layout_constraintEnd_toEndOf="@+id/toolbar"
+                app:layout_constraintStart_toStartOf="@+id/toolbar"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/choose_carType"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignRight="@+id/toolbar"
+                android:layout_alignBottom="@+id/toolbar"
+                android:layout_marginTop="12dp"
+                android:background="#00000000"
+                android:text="筛选"
+                android:textAllCaps="true"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ListView
+                android:id="@+id/shop_area"
+                android:layout_width="100dp"
+                android:layout_height="0dp"
+                android:layout_below="@+id/toolbar"
+                android:layout_alignParentStart="true"
+                android:background="#f0f0f0"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/cars"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="8dp"
+                android:layout_toEndOf="@+id/shop_area"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/shop_area"
+                app:layout_constraintTop_toBottomOf="@+id/textView37">
+
+            </android.support.v7.widget.RecyclerView>
+
+            <TextView
+                android:id="@+id/textView37"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:text="价格区间："
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/cars"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+            <TextView
+                android:id="@+id/choose_price"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginStart="15dp"
+                android:textColor="@color/color_red"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/textView37"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        </android.support.constraint.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="300dp"
+            android:layout_below="@+id/layout_price"
+            android:layout_marginTop="40dp"
+            android:layout_gravity="end"
+            android:alpha="1"
+            android:background="#ffffff"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginTop="3dp"
+                android:layout_width="match_parent"
+                android:background="@color/cp_color_gray"
+                android:layout_height="1dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_gravity="center_horizontal"
+                android:text="价格"
+                android:textSize="30sp" />
+
+            <GridView
+                android:id="@+id/gprice"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:numColumns="1" />
+        </LinearLayout>
+
+    </android.support.v4.widget.DrawerLayout>
+
+</RelativeLayout>

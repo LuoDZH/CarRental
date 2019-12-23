@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.bottombar">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 获取地图 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- 获取电话 -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:name=".entity.User"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="oGz5fz5auXRG5TLkSF1yrSGP3r46bOTT" />
+
+        <activity
+            android:name=".activity.MainActivity"
+            android:theme="@style/DefaultCityPickerTheme"
+            android:launchMode="singleTop">
+
+        </activity>
+        <activity android:name=".activity.Register"
+            android:launchMode="singleTop"/>
+        <activity android:name=".activity.Login"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.CheckID"
+            android:launchMode="singleTop"/>
+        <activity android:name=".activity.Wallet"
+            android:launchMode="singleTop"/>
+        <activity
+            android:name=".activity.OrderDetail"
+            android:launchMode="singleTop" />
+        <activity android:name=".activity.OrderSubmit"
+            android:launchMode="singleTop" />
+        <activity android:name=".activity.OrderPay"
+            android:launchMode="singleTop" />
+        <activity android:name=".activity.SelectCar"
+            android:launchMode="singleTop" />
+        <activity android:name=".activity.SelectShop"
+            android:launchMode="singleTop" />
+        <activity android:name=".activity.SetUp"
+            android:launchMode="singleTop" />
+        <activity android:name=".activity.ModifyPassword"
+            android:launchMode="singleTop" />
+        <activity android:name=".activity.CheckWalletDetail"
+            android:launchMode="singleTop" />
+        <activity android:name=".activity.OrderDelay"
+            android:launchMode="singleTop" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+
+        <activity android:name=".activity.Map"
+            android:launchMode="singleTop" />
+        <activity android:name=".activity.QuestionActivity"
+            android:launchMode="singleTop" />
+        <activity android:name=".activity.QuestionContentActivtiy"
+            android:launchMode="singleTop" ></activity>
+    </application>
+
+</manifest>

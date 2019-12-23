@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <!--这里用线性布局的marginRight排版时会不起作用，不知道为什么-->
+    <TextView
+        android:id="@+id/title_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="10dp"
+        android:textStyle="bold"
+        />
+    <ImageView
+        android:id="@+id/image_item"
+        android:layout_marginTop="10dp"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_centerVertical="true"
+        android:background="#ffffff"
+        android:layout_alignParentEnd="true"
+        />
+
+</RelativeLayout>
